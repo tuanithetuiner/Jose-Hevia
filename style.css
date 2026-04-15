@@ -1,7 +1,7 @@
 ﻿:root {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #1f2937;
-  background: #f3f4f6;
+  background: #eef2f7;
   margin: 0;
 }
 
@@ -19,14 +19,15 @@ a {
 }
 
 .hero {
-  background: linear-gradient(135deg, #1f2937, #3b82f6);
+  background: radial-gradient(circle at top right, rgba(59,130,246,0.8), transparent 35%),
+              linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
   color: #ffffff;
-  padding: 4rem 1.5rem;
+  padding: 4rem 1.5rem 2rem;
   text-align: center;
 }
 
 .hero-content {
-  max-width: 700px;
+  max-width: 770px;
   margin: 0 auto;
 }
 
@@ -34,30 +35,65 @@ a {
   display: inline-block;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   margin-bottom: 1rem;
-  color: #bfdbfe;
+  color: #93c5fd;
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
   margin: 0.5rem 0;
 }
 
 .hero-text {
-  margin: 1rem auto 2rem;
-  max-width: 640px;
+  margin: 1.25rem auto 2rem;
+  max-width: 680px;
   font-size: 1.05rem;
+  color: #dbeafe;
 }
 
 .cta {
   display: inline-block;
-  background: #fbbf24;
+  background: #fcd34d;
   color: #111827;
   padding: 1rem 2rem;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 700;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
+}
+
+.hero-widgets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 1080px;
+  margin: -2rem auto 2rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.widget {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.widget-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.widget h3 {
+  margin: 0.5rem 0;
 }
 
 .sections {
@@ -66,42 +102,98 @@ a {
   margin: 0 auto;
 }
 
+.section-alt {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.05);
+}
+
 .sections h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   font-size: 2rem;
 }
 
 .highlight {
-  background: #fffbeb;
-  border-left: 6px solid #facc15;
-  margin: 1rem auto;
+  background: linear-gradient(135deg, #f8fafc 0%, #fef3c7 100%);
+  border-left: 6px solid #f59e0b;
+  margin: 0 1.5rem 2rem;
   padding: 1.8rem 1.5rem;
-  max-width: 1080px;
-  border-radius: 14px;
+  border-radius: 20px;
 }
 
 .cards {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  padding: 0 1rem 1rem;
 }
 
 .card {
-  background: #ffffff;
-  padding: 1.5rem;
-  border-radius: 14px;
+  background: #f8fafc;
+  padding: 1.7rem;
+  border-radius: 18px;
   box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.14);
+}
+
+.card-icon {
+  display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.6rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .card h3 {
+  margin: 0 0 0.75rem;
+}
+
+.card-blue {
+  background: linear-gradient(180deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.card-purple {
+  background: linear-gradient(180deg, #f5f3ff 0%, #ede9fe 100%);
+}
+
+.card-green {
+  background: linear-gradient(180deg, #ecfdf5 0%, #d1fae5 100%);
+}
+
+.about-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.about-box {
+  background: #eef2ff;
+  border-radius: 18px;
+  padding: 1.7rem;
+}
+
+.about-box h3 {
   margin-top: 0;
+}
+
+.about-box ul {
+  padding-left: 1.2rem;
+}
+
+.about-box li {
+  margin-bottom: 0.75rem;
 }
 
 .about p {
   max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
 }
 
 footer {
@@ -109,4 +201,15 @@ footer {
   padding: 1.5rem 1rem;
   background: #111827;
   color: #e5e7eb;
+}
+
+@media (max-width: 720px) {
+  .hero-widgets,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 3rem;
+  }
 }
